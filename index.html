@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mehdi Damou — Sidekick to superheroes.</title>
+<meta name="description" content="Mehdi Damou — former McKinsey Partner (2009–2026). Sidekick to executive teams: bringing the super powers and secret sauce to design, run and sustain transformations of performance and culture." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Permanent+Marker&family=Lalezar&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f1eee6;
+    --ink: #111111;
+    --acid: #d7ff1e;
+    --pink: #ff3d8b;
+    --blue: #2f5bff;
+    --shadow: 6px 6px 0 var(--ink);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Space Mono", ui-monospace, monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* concrete grain */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  }
+  a { color: inherit; }
+  .display { font-family: "Anton", Impact, sans-serif; text-transform: uppercase; letter-spacing: .5px; line-height: .9; }
+  .marker { font-family: "Permanent Marker", cursive; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--ink); color: var(--paper);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 24px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  nav .logo { font-family: "Anton"; font-size: 22px; background: var(--acid); color: var(--ink); padding: 0 8px; transform: rotate(-2deg); text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 22px; }
+  nav ul a { text-decoration: none; }
+  nav ul a:hover { color: var(--acid); }
+
+  /* HERO */
+  .hero { position: relative; padding-top: 80px; padding-bottom: 60px; }
+  .hero h1 { font-size: clamp(60px, 15vw, 220px); }
+  .hero h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+  .hero h1 .hl { background: var(--acid); padding: 0 .08em; display: inline-block; transform: rotate(-1.5deg); font-size: .72em; }
+  .hero .tagline { max-width: 640px; margin-top: 28px; font-size: 18px; }
+  .hero .tagline b { background: var(--ink); color: var(--paper); padding: 0 6px; }
+  .sticker {
+    display: inline-block; font-family: "Anton"; text-transform: uppercase;
+    border: 3px solid var(--ink); box-shadow: var(--shadow); padding: 8px 14px; font-size: 18px;
+  }
+  .hero .s1 { position: absolute; top: 70px; right: 6%; background: var(--pink); color: #fff; transform: rotate(8deg); }
+  .hero .s2 { position: absolute; top: 260px; right: 14%; background: var(--blue); color: #fff; transform: rotate(-6deg); }
+  .hero .tag { position: absolute; right: 4%; bottom: 40px; font-size: 42px; color: var(--pink); transform: rotate(-8deg); }
+  .cta { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .btn {
+    font-family: "Anton"; text-transform: uppercase; font-size: 20px; text-decoration: none;
+    border: 3px solid var(--ink); padding: 12px 22px; box-shadow: var(--shadow);
+    background: var(--acid); transition: transform .12s, box-shadow .12s;
+  }
+  .btn.alt { background: var(--paper); }
+  .btn:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--ink); }
+
+  /* MARQUEE */
+  .marquee { background: var(--ink); color: var(--acid); overflow: hidden; border-block: 3px solid var(--ink); transform: rotate(-1.5deg); margin: 30px -20px; }
+  .marquee .track { display: flex; width: max-content; animation: scroll 28s linear infinite; }
+  .marquee span { font-family: "Anton"; font-size: 34px; text-transform: uppercase; padding: 10px 0; white-space: nowrap; }
+  .marquee span::after { content: "✦"; color: var(--pink); margin: 0 26px; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  section { padding: 90px 0; }
+  .label { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; display: inline-block; background: var(--ink); color: var(--paper); padding: 2px 10px; }
+  h2 { font-size: clamp(48px, 8vw, 110px); margin-bottom: 40px; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: start; }
+  .about-grid > * { min-width: 0; }
+  .about-grid p { margin-bottom: 18px; font-size: 17px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat { border: 3px solid var(--ink); box-shadow: var(--shadow); padding: 18px; background: #fff; }
+  .stat:nth-child(1) { background: var(--acid); transform: rotate(-1deg); }
+  .stat:nth-child(4) { background: var(--pink); color: #fff; transform: rotate(1deg); }
+  .stat .n { font-family: "Anton"; font-size: clamp(34px, 4.6vw, 56px); line-height: 1; white-space: nowrap; }
+  .stat .t { font-size: 13px; text-transform: uppercase; }
+
+
+  /* PLAYBOOK */
+  .playbook { background: var(--ink); color: var(--paper); }
+  .playbook .label { background: var(--acid); color: var(--ink); }
+  .playbook .intro { max-width: 640px; font-size: 18px; margin: -20px 0 40px; opacity: .9; }
+  .playbook .card { color: var(--ink); box-shadow: 6px 6px 0 var(--pink); border-color: var(--paper); }
+  .playbook .card:nth-child(3) { color: #fff; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 24px; }
+  .card { border: 3px solid var(--ink); box-shadow: var(--shadow); padding: 26px; background: #fff; transition: transform .15s; }
+  .card:hover { transform: rotate(-1.5deg) scale(1.02); }
+  .card:nth-child(2n) { background: var(--acid); }
+  .card:nth-child(3) { background: var(--blue); color: #fff; }
+  .card .num { font-family: "Anton"; font-size: 18px; border: 2px solid currentColor; display: inline-block; padding: 0 8px; margin-bottom: 14px; }
+  .card h3 { font-family: "Anton"; text-transform: uppercase; font-size: 30px; line-height: 1; margin-bottom: 12px; }
+
+  /* THINKING */
+  .thinking { background: var(--acid); border-block: 3px solid var(--ink); }
+  .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; }
+  .quote { background: var(--paper); border: 3px solid var(--ink); box-shadow: var(--shadow); padding: 28px; position: relative; }
+  .quote .big { font-family: "Anton"; text-transform: uppercase; font-size: 30px; line-height: 1.05; margin-bottom: 12px; }
+  .quote .src { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: .7; }
+  .quote::before { content: "“"; position: absolute; top: -34px; left: 14px; font-family: "Anton"; font-size: 90px; color: var(--pink); }
+
+  /* MANIFESTO + LESSONS */
+  .manifesto { font-family: "Permanent Marker", cursive; font-size: clamp(24px, 3.6vw, 42px); color: var(--pink); transform: rotate(-1.5deg); margin: -16px 0 44px; line-height: 1.2; }
+  .lessons { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 28px; margin-top: 70px; }
+  .lesson { background: var(--ink); color: var(--paper); padding: 30px; box-shadow: 8px 8px 0 var(--pink); }
+  .lesson:nth-child(2) { box-shadow: 8px 8px 0 var(--blue); }
+  .lesson .k { font-family: "Anton"; color: var(--acid); letter-spacing: 2px; }
+  .lesson h3 { font-family: "Anton"; text-transform: uppercase; font-size: clamp(28px, 3.4vw, 42px); line-height: 1; margin: 10px 0 16px; }
+  .lesson h3 em { color: var(--acid); font-style: normal; }
+  .quote .big.ar { font-family: "Lalezar", sans-serif; text-transform: none; font-size: 30px; line-height: 1.5; }
+
+
+  /* CONTACT */
+  .contact { background: var(--pink); color: #fff; text-align: center; border-top: 3px solid var(--ink); }
+  .contact h2 { margin-bottom: 20px; -webkit-text-stroke: 2px var(--ink); }
+  .contact .btn { color: var(--ink); }
+  footer { background: var(--ink); color: var(--paper); text-align: center; padding: 20px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+
+  /* reveal */
+  .js .reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s, transform .6s; }
+  .js .reveal.on { opacity: 1; transform: none; }
+
+  @media (max-width: 800px) {
+    nav ul { display: none; }
+    .hero .s1, .hero .s2, .hero .tag { position: static; margin: 10px 10px 0 0; }
+    .hero .tag { display: block; font-size: 26px; margin-top: 24px; }
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding-right: 6px; }
+    .stat { padding: 14px; }
+    .stat .n { font-size: 28px; }
+    .stat .t { font-size: 10px; }
+    .about-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee .track { animation: none; }
+    .js .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="logo">M.D.</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#playbook">How I help</a></li>
+    <li><a href="#words">Words</a></li>
+    <li><a href="#contact">Let's chat</a></li>
+  </ul>
+</nav>
+
+<header class="hero wrap" id="top">
+  <h1 class="display">Mehdi<br><span class="outline">Damou</span><br><span class="hl">Sidekick</span></h1>
+  <p class="tagline">Executive teams are the <b>superheroes</b>. They take their institutions to new territories. I'm the sidekick: I bring the super powers and the secret sauce they need to design, run and sustain their transformation, turning around performance <i>and</i> culture together. 17 years at McKinsey &amp; Company, nine as a Partner. Now "retired" at 40 and writing the next chapter.</p>
+  <div class="cta">
+    <a class="btn" href="#playbook">How I help ↓</a>
+    <a class="btn alt" href="https://www.linkedin.com/in/mehdidamou/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <span class="sticker s1">Super powers inside</span>
+  <span class="sticker s2">"Retired" at 40</span>
+  <span class="marker tag">sidekick to superheroes</span>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Superheroes × Sidekick</span><span>Super powers</span><span>Secret sauce</span><span>Design · Run · Sustain</span><span>Performance × Culture</span><span>Heart over ideas</span><span>Caring × Meritocratic</span><span>Next chapter</span>
+    <span>Superheroes × Sidekick</span><span>Super powers</span><span>Secret sauce</span><span>Design · Run · Sustain</span><span>Performance × Culture</span><span>Heart over ideas</span><span>Caring × Meritocratic</span><span>Next chapter</span>
+  </div>
+</div>
+
+<section id="about" class="wrap">
+  <span class="label">01 / About</span>
+  <h2 class="display">Every hero needs<br>a sidekick</h2>
+  <p class="manifesto">I learned a job, then a profession, and finally how to be.</p>
+  <div class="about-grid reveal">
+    <div>
+      <p>I'm an engineer by training and a builder at heart. Before consulting, I co-founded a streetwear brand and a PR &amp; events company: designing products, running production, raising money, throwing parties.</p>
+      <p>In 2009 I joined McKinsey and found far more than a firm. I found communities: offices from Switzerland, Benelux and France to Montréal, the Africa office that became my second family, and the transformation community (RTS, now MT) that became a family of its own. The Algerian community will always hold a special place in my heart.</p>
+      <p>Transformations are never a solo act. The real heroes are the leaders and teams who take their institutions to territories they've never been. My role was to stand beside them, bringing the tools, the method and the mindset to change performance and culture at the same time, and to make that change last.</p>
+      <p>Together with those teams, that has meant 20+ companies and institutions transformed, $30bn+ in returns, and 40+ executives who grew new super powers along the way. Their wins, my privilege.</p>
+      <p>In 2026 I closed that chapter, with gratitude, to reach a personal goal: "retiring" at 40. The next one is still being written.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">$30bn+</div><div class="t">returns, delivered together</div></div>
+      <div class="stat"><div class="n">20+</div><div class="t">companies partnered with</div></div>
+      <div class="stat"><div class="n">17</div><div class="t">years at McKinsey · 9 as Partner</div></div>
+      <div class="stat"><div class="n">40+</div><div class="t">executives upskilled</div></div>
+    </div>
+  </div>
+
+  <div class="lessons">
+    <div class="lesson reveal">
+      <div class="k">LESSON 01</div>
+      <h3>Impact is won by the heart, not by ideas.</h3>
+      <p>I joined convinced the goal was to be the smartest person in the room. Serving clients taught me otherwise. It was an unexpected, sometimes painful lesson, and one of the most valuable I carry. I was humbly part of deep transformations in which women and men grew toward nobler aspirations.</p>
+    </div>
+    <div class="lesson reveal">
+      <div class="k">LESSON 02</div>
+      <h3>Caring <em>and</em> meritocratic. Both. Always.</h3>
+      <p>You can build an environment that creates real opportunities for remarkable people while keeping the bar uncompromisingly high. I didn't learn this in a straight line. To everyone I learned it with: thank you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="playbook" class="playbook">
+  <div class="wrap">
+    <span class="label">02 / How I help</span>
+    <h2 class="display">The sidekick's<br>toolkit</h2>
+    <p class="intro">The executive team leads. I make sure they have what it takes at every stage of the journey.</p>
+    <div class="cards">
+      <div class="card reveal"><span class="num">01 · Design</span><h3>Dare the new territory</h3><p>Helping leaders shape a bold ambition and a credible path to get there, so the destination is theirs from day one.</p></div>
+      <div class="card reveal"><span class="num">02 · Run</span><h3>The secret sauce</h3><p>Performance and culture, turned around together. The method, rhythm and mindset shifts that make a transformation move.</p></div>
+      <div class="card reveal"><span class="num">03 · Sustain</span><h3>Super powers that stay</h3><p>Coaching and upskilling executives (40+ so far) so the change keeps going long after the sidekick has left.</p></div>
+      <div class="card reveal"><span class="num">04 · Impact</span><h3>Their wins</h3><p>20+ companies and institutions across mining, rail, the public sector, finance and more, with $30bn+ in returns.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="words" class="thinking">
+  <div class="wrap">
+    <span class="label">03 / Words</span>
+    <h2 class="display">Words that<br>shaped me</h2>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="big">Carve beauty out of the most rigid structures.</div>
+        <p>"Our profession is like wave erosion: water hitting a rock, back and forth, carving over time a shape that will last for thousands of years. We may not see it at first, but when we work collectively and with purpose, we can carve beauty out of the most rigid structures."</p>
+        <div class="src">On transformation</div>
+      </div>
+      <div class="quote reveal">
+        <div class="big ar" lang="ar" dir="rtl">اعمل لدنياك كأنك تعيش أبدا، واعمل لآخرتك كأنك تموت غدا</div>
+        <p>"Work for your life on earth as if you were to live forever, and work for the hereafter as if you were to die tomorrow."</p>
+        <div class="src">Arabic wisdom</div>
+      </div>
+      <div class="quote reveal">
+        <div class="big">Change starts with the one in the mirror.</div>
+        <p>If you want to make the world a better place, the first person to ask to change is yourself. A song I keep coming back to.</p>
+        <div class="src">After Michael Jackson, "Man in the Mirror"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="display">Let's have a chat</h2>
+    <p style="margin-bottom:30px;font-size:18px;">Leading a transformation, dreaming up a new territory, or just want to swap stories? I'd love to hear from you.</p>
+    <a class="btn" href="https://www.linkedin.com/in/mehdidamou/" target="_blank" rel="noopener">Say hi on LinkedIn ↗</a>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> Mehdi Damou · Sidekick to superheroes</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .05 });
+  setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('on')), 2500);
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
